@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import url("font-awesome/ubuntu.css");
+@import url("font-awesome/open-sans.css");
+
+body {
+  background-color: #000;
+  margin: auto;
+  background-repeat: repeat-y;
+  overflow-y: visible;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  background-size: 8%;
+  font-size: 14pt;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+.red {
+  color: red;
+}
+
+/*tables*/
+.text-black {
+  color: black;
+}
+table {
+  text-align: left;
+}
+
+/*navs*/
+.nav-tabs > li > a.active,
+.nav > li > a:hover {
+  background-color: #000;
+  color: #f9f9f9;
+  border: 1px #fff solid;
+}
+
+/*smartphones*/
+@media (max-width: 600px) {
+  /*background*/
+  body {
+    background-image: none;
+  }
+
+  /*container*/
+  .container {
+    width: 100%;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
