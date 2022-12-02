@@ -1,22 +1,66 @@
 const express = require('express');
+const fs = require('fs');
+const path = require("path")
+const mysql = require("mysql");
+const viewFile = "view.sql";
+let viewSql;
 
-function createRouter(db) {
+function readViewSql() {
+    fs.readFile(path.resolve(__dirname, viewFile),
+        'utf8', function(err, data){
+        if (err !== undefined && err !== null) {
+            console.log(err)
+        }
+        viewSql = data;
+    });
+
+    console.log('readFile called');
+}
+
+function getConnection() {
+    const connection = mysql.createConnection({
+        host     : 'remotemysql.com',
+        user     : 'sxk77JdigU',
+        password : 'vhHr3VZV3M',
+        database : 'sxk77JdigU'
+    });
+
+    connection.connect();
+
+    return connection
+}
+function createRouter() {
     const router = express.Router();
 
+    console.log(viewSql)
+    if (viewSql === undefined) {
+        readViewSql();
+    }
     // the routes are defined here
     router.get('/event', function (req, res, next) {
-        db.query(
-            'SELECT * FROM Furniture_piece',
-            (error, results) => {
-                if (error) {
-                    console.log(error);
-                    res.status(500).json({status: 'error'});
-                } else {
-                    res.status(200).json(results);
+        let connection = null;
+        try {
+            connection = getConnection()
+            connection.query(
+                viewSql,
+                (error, results) => {
+                    if (error) {
+                        console.log(error);
+                        res.status(500).json({status: 'error'});
+                    } else {
+                        res.status(200).json(results);
+                    }
                 }
+            );
+        } catch (e) {
+            console.log(e)
+        } finally {
+            if (connection !== null) {
+                connection.end()
             }
-        );
+        }
     });
+
     return router;
 }
 
