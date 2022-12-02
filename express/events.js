@@ -19,10 +19,10 @@ function readViewSql() {
 
 function getConnection() {
     const connection = mysql.createConnection({
-        host     : 'remotemysql.com',
-        user     : 'sxk77JdigU',
-        password : 'vhHr3VZV3M',
-        database : 'sxk77JdigU'
+        host     : env.lookup("database_url"),
+        user     : env.lookup("database_user"),
+        password : env.lookup("database_password"),
+        database : env.lookup("database_user")
     });
 
     connection.connect();
