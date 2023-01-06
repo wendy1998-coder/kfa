@@ -1,0 +1,231 @@
+.header {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0 0 30px;
+  background-color: #323269;
+}
+
+/*CSS menu*/
+#cssmenu ul,
+#cssmenu li,
+#cssmenu span,
+#cssmenu a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#cssmenu {
+  width: 100%;
+  background: #000;
+  margin-top: 5px;
+  border-bottom: 2px solid #29ABE2;
+  position: relative;
+  margin-bottom: 15px;
+}
+#cssmenu:after,
+#cssmenu ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#cssmenu a {
+  display: block;
+  text-decoration: none;
+  color: #7C35B4;
+}
+
+#cssmenu ul {
+  list-style: none;
+}
+
+#cssmenu > ul {
+  font-size: 0;
+}
+#cssmenu > ul > li {
+  display: inline-block;
+  width: calc(100% /6);
+  float: left;
+  margin: 0;
+}
+
+#cssmenu.align-center {
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  float: none;
+}
+#cssmenu.align-center ul ul {
+  text-align: left;
+}
+
+#cssmenu > ul > li > a {
+  color: #7c35b4;
+  font-size: 12px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a {
+  color: #c780ff;
+  text-decoration: none;
+  border-bottom: 2px solid #29ABE2;
+}
+
+#cssmenu > ul > li.active > a {
+  font-weight: 700;
+}
+/*sub menu's*/
+/*first layer*/
+#cssmenu .has-sub {
+  z-index: 1;
+}
+#cssmenu .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub ul {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+}
+
+#cssmenu .has-sub ul li {
+  *margin-bottom: -1px;
+}
+#cssmenu .has-sub ul li a {
+  background: #000;
+  border: 1px solid #29ABE2;
+  font-size: 11px;
+  filter: none;
+  display: block;
+  line-height: 120%;
+  padding: 10px;
+  color: #7c35b4;
+}
+#cssmenu ul ul li:hover > a {
+  color: #c780ff;
+  border-bottom: 2px solid #29ABE2;
+}
+
+/*second layer*/
+#cssmenu .has-sub .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub .has-sub ul {
+  display: none;
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  top: 0;
+}
+
+#cssmenu .has-sub .has-sub ul li a {
+  background: #000;
+  color: #7c35b4;
+  border-bottom: 1px solid #29ABE2;
+}
+#cssmenu .has-sub .has-sub ul li a:hover {
+  color: #c780ff;
+  border-bottom: 2px solid #29ABE2;
+}
+
+/*mobile menu*/
+/*menu styles*/
+/* Starter CSS for Flyout Menu */
+.mobiel_menu {
+  display: none;
+}
+
+#mobiel_menu {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 1;
+  display: none;
+  font-size: 12px;
+}
+#mobiel_menu ul,
+#mobiel_menu ul li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#mobiel_menu ul {
+  position: relative;
+  z-index: 1000;
+  float: left;
+}
+#mobiel_menu ul li {
+  float: left;
+  min-height: 1px;
+  vertical-align: middle;
+  position: relative;
+}
+#mobiel_menu ul li.hover,
+#mobiel_menu ul li:hover {
+  position: relative;
+  cursor: default;
+}
+
+#mobiel_menu ul li {
+  float: none;
+}
+
+/* Custom CSS Styles */
+#mobiel_menu:before {
+  content: '';
+  display: block;
+}
+#mobiel_menu:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#mobiel_menu a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #7C35B4;
+  border-right: 1px solid #29ABE2;
+}
+
+#mobiel_menu ul {
+  background: #000;
+  z-index: 1;
+  width: 100%;
+}
+
+#mobiel_menu li:hover,
+#mobiel_menu .active {
+  border-right: 3px solid #29ABE2;
+  font-weight: bold;
+}
+
+#mobiel_menu li {
+  position: relative;
+}
+
+#mobiel_menu ul li {
+  border-bottom: 1px solid #29ABE2;
+}
+
+/*smartphones*/
+@media (max-width: 600px) {
+  /*menu*/
+  #cssmenu {
+    display: none;
+  }
+
+  #mobiel_menu a {
+    padding: 7px 10px;
+    border-left: 1px solid #29ABE2;
+  }
+
+  .mobiel_menu,
+  #mobiel_menu {
+    display: block;
+  }
+}

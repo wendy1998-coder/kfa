@@ -1,0 +1,35 @@
+<div id="header" class="secondary-bg">
+  <h1 id="title" class="thirtiary">KAW Furniture Assembler</h1>
+  <div id="cssmenu" class="primary-bg quarternary-border thirtiary menu" #menu>
+    <ul>
+      <li>
+        <a href="#" id="home_c">Home</a>
+      </li>
+      <li>
+        <a href="#" [routerLink]="'assembler'" id="assembler_c">Furniture assembler</a>
+      </li>
+      <li>
+        <a href="#" [routerLink]="'catalog'" id="catalog_c">Catalog</a>
+      </li>
+    </ul>
+  </div>
+  <div id="mobiel_menu" #mobile>
+    <div id="mobileMenuTrigger" class="primary-bg quarternary-border thirtiary menu">
+      Unfold menu
+    </div>
+    <ul id="mobileMenuItems" class="primary-bg quarternary-border thirtiary">
+      <li>
+        <a href="#" id="home_m">Home</a>
+      </li>
+      <li>
+        <a href="#" [routerLink]="'assembler'" id="assembler_m">Furniture assembler</a>
+      </li>
+      <li>
+        <a href="#" [routerLink]="'catalog'" id="catalog_m">Catalog</a>
+      </li>
+      <li>
+        <a href="#" [routerLink]="'contact'" id="contact_m">Contact</a>
+      </li>
+    </ul>
+  </div>
+</div>

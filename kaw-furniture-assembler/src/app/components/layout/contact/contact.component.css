@@ -1,0 +1,18 @@
+.footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #323269;
+}
+
+.adjusted {
+  position: absolute;
+  bottom: 0;
+}
+
+#linkedin {
+  float: right;
+}
+
+#gmail {
+  float: left;
+}
