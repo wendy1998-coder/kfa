@@ -12,6 +12,5 @@ app.use(bodyParser.json());
 app.use(cors())
 app.use(apiRoute, events())
 
-
 module.exports = app;
 module.exports.handler = serverless(app);

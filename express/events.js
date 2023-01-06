@@ -21,13 +21,13 @@ function createRouter() {
     const router = express.Router();
 
     // the routes are defined here
-    router.get("/api/test", (req, res) => {
+    router.get("/test", (req, res) => {
         res
             .status(200)
             .json({message: 'Endpoint is working' });
     });
 
-    router.get('/api/event', function (req, res, next) {
+    router.get('/event', function (req, res, next) {
         let connection = null;
         try {
             connection = getConnection()
