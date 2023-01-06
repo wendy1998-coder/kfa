@@ -5,10 +5,6 @@ const {config} = require("dotenv");
 function getConnection() {
     config();
 
-    console.log(process.env.database_url)
-    console.log(process.env.database_user)
-    console.log(process.env.database_name)
-
     const connection = mysql.createConnection({
         host     : process.env.database_url,
         user     : process.env.database_user,
@@ -40,7 +36,7 @@ function createRouter() {
                 (error, results) => {
                     if (error) {
                         console.log(error);
-                        res.status(500).json({status: 'error'});
+                        res.status(500).json({status: 'error', error: error});
                     } else {
                         res.status(200).json(results);
                     }
