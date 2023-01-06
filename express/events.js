@@ -31,6 +31,7 @@ function createRouter() {
         let connection = null;
         try {
             connection = getConnection()
+            console.log("Made a successfull database connection")
             connection.query(
                 "SELECT * From Furniture_information",
                 (error, results) => {
