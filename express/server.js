@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const events = require('./events');
 
 const app = express();
-const apiRoute = "/.netlify/functions/events";
+const apiRoute = "/.netlify/functions/server";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
