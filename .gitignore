@@ -2,6 +2,8 @@ node_modules/
 dist/
 functions/
 
+.idea/
+
 # Only exists if Bazel was run
 /bazel-out
 
@@ -44,3 +46,4 @@ skillsConverter.py
 # System Files
 .DS_Store
 Thumbs.db
+/.env

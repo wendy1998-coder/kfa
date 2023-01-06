@@ -1,2 +1,2 @@
-# angular-node.js-netlify-boilerplate
-Boilerplate for Angular + Node.js project prepared for netlify
+# Kaw furniture assembler
+Netlify project for furniture assembly in kaw.
