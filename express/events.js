@@ -5,11 +5,15 @@ const {config} = require("dotenv");
 function getConnection() {
     config();
 
+    console.log(process.env.database_url)
+    console.log(process.env.database_user)
+    console.log(process.env.database_name)
+
     const connection = mysql.createConnection({
         host     : process.env.database_url,
         user     : process.env.database_user,
         password : process.env.database_password,
-        database : process.env.database_name || 'freedb_KAW_furniture'
+        database : process.env.database_name
     });
 
     connection.connect();
@@ -31,7 +35,6 @@ function createRouter() {
         let connection = null;
         try {
             connection = getConnection()
-            console.log("Made a successfull database connection")
             connection.query(
                 "SELECT * From Furniture_information",
                 (error, results) => {
