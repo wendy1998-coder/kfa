@@ -27,7 +27,7 @@ function createRouter() {
             .json({message: 'Endpoint is working' });
     });
 
-    router.get('/event', function (req, res, next) {
+    router.get('/collect_all_furniture', function (req, res) {
         let connection = null;
         try {
             connection = getConnection()
@@ -36,7 +36,7 @@ function createRouter() {
                 (error, results) => {
                     if (error) {
                         console.log(error);
-                        res.status(500).json({status: 'error', error: error});
+                        res.status(500).json({status: 'error'});
                     } else {
                         res.status(200).json(results);
                     }
