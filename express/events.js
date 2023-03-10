@@ -9,7 +9,8 @@ function getConnection() {
         host     : process.env.database_url,
         user     : process.env.database_user,
         password : process.env.database_password,
-        database : process.env.database_name
+        database : process.env.database_name,
+        debug: true
     });
 
     connection.connect();
