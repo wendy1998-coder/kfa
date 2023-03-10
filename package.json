@@ -4,7 +4,8 @@
   "main": "functions/server.js",
   "scripts": {
     "build": "cd kaw-furniture-assembler && npm install && ng build --prod && cd ../ && netlify-lambda build express",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "start:lambda": "netlify-lambda serve express"
   },
   "dependencies": {
     "@angular/cli": "~10.0.0",
