@@ -35,8 +35,7 @@ function createRouter() {
                 "SELECT * From Furniture_information",
                 (error, results) => {
                     if (error) {
-                        console.log(error);
-                        res.status(500).json({status: 'error'});
+                        res.status(500).json({status: 'error', message: error});
                     } else {
                         res.status(200).json(results);
                     }
